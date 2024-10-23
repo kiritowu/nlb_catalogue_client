@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "nlb-catalogue-client"
+version = "v2"
+description = "A client library for accessing NLB's Catalogue Search API"
+authors = ["Wong Zhao Wu <zhaowu.wong@gmail.com>"]
+readme = "README.md"
+packages = [
+    {include = "nlb_catalogue_client"},
+]
+include = ["CHANGELOG.md", "catalogue_client/py.typed"]
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+httpx = ">=0.20.0,<0.28.0"
+attrs = ">=21.3.0"
+python-dateutil = "^2.8.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["F", "I", "UP"]
+
+[tool.pyright]
+venvPath="."
+venv="venv"
