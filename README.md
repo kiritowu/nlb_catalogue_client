@@ -7,7 +7,7 @@ Tenacity with `wait_exponential` is used for retry behavior on NLP API if `429 T
 The package can be installed with the following command:
 
 ```bash
-pip install nlb_catalogue_client
+pip install nlb-catalogue-client
 ```
 
 As API key is required for access of NLB's API, please request one using [Open Web Service Application Form](https://go.gov.sg/nlblabs-form).
