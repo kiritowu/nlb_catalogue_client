@@ -2,6 +2,7 @@ from http import HTTPStatus
 from typing import Any, Dict, Optional, Union
 
 import httpx
+from tenacity import retry, wait_exponential, retry_if_result
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
