@@ -133,6 +133,7 @@ def _build_response(
     )
 
 
+@retry(retry=retry_if_result(lambda x: x.status_code == 429), wait=wait_exponential())
 def sync_detailed(
     *,
     client: AuthenticatedClient,

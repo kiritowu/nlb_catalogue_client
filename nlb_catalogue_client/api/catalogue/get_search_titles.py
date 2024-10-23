@@ -2,6 +2,7 @@ from http import HTTPStatus
 from typing import Any, Dict, List, Optional, Union
 
 import httpx
+from tenacity import retry, retry_if_result, wait_exponential
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
@@ -168,6 +169,7 @@ def _build_response(
     )
 
 
+@retry(retry=retry_if_result(lambda x: x.status_code == 429), wait=wait_exponential())
 def sync_detailed(
     *,
     client: AuthenticatedClient,
