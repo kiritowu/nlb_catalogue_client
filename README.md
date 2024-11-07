@@ -108,6 +108,14 @@ client = Client(
 client.set_httpx_client(httpx.Client(base_url="https://openweb.nlb.gov.sg/api/v2/Catalogue/", proxies="http://localhost:8030"))
 ```
 
+## Running Tests
+
+To run the test suite, ensure you have the package installed locally and execute:
+
+```bash
+pytest .
+```
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
