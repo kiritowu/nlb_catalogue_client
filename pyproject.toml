@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nlb-catalogue-client"
-version = "0.1.2"
+version = "0.1.3"
 description = "A client library for accessing NLB's Catalogue Search API"
 authors = ["Wong Zhao Wu <zhaowu.wong@gmail.com>"]
 readme = "README.md"
