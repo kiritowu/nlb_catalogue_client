@@ -41,7 +41,7 @@ venv="venv"
 [tool.pytest.ini_options]
 testpaths = "tests"
 python_files = "test_*.py"
-addopts = "--cov=nlb_catalogue_client --cov-report=term-missing"
+addopts = "--cov=nlb_catalogue_client --cov-report=term-missing --junitxml=coverage.xml"
 
 # Coverage configs
 [tool.coverage.run]
