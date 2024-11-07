@@ -1,9 +1,46 @@
-name: Publish Python 🐍 distribution 📦 to PyPI and TestPyPI
+name: Test and Publish Python 🐍 distribution 📦 to PyPI
 
-on: push
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+# https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+# `contents` is for permission to the contents of the repository.
+# `pull-requests` is for permission to pull request
+permissions:
+  contents: write
+  checks: write
+  pull-requests: write
 
 jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.x"
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+    - name: Install dependencies
+      run: poetry install
+    - name: Run tests
+      run: poetry run pytest | tee pytest-coverage.txt
+    - name: Pytest coverage comment
+      uses: MishaKav/pytest-coverage-comment@main
+      with:
+        pytest-coverage-path: ./pytest-coverage.txt
+        junitxml-path: ./coverage.xml
+
   build:
+    needs: test  # Ensure tests pass before building
     name: Build distribution 📦
     runs-on: ubuntu-latest
 
