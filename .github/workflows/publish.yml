@@ -17,10 +17,23 @@ permissions:
   pull-requests: write
 
 jobs:
+  format-markdown:
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout repo content
+          uses: actions/checkout@v4
+
+        - name: Markdown format check
+          run: |
+              npm install -g markdownlint-cli
+              markdownlint --disable MD013 MD033 MD041 --fix .
+              git add -A
+              git diff --cached --exit-code
+
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python
@@ -74,7 +87,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/nlb-catalogue-client  
+      url: https://pypi.org/p/nlb-catalogue-client
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
 
