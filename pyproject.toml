@@ -42,6 +42,7 @@ venv="venv"
 testpaths = "tests"
 python_files = "test_*.py"
 addopts = "--cov=nlb_catalogue_client --cov-report=term-missing --junitxml=coverage.xml"
+asyncio_default_fixture_loop_scope = "function"
 
 # Coverage configs
 [tool.coverage.run]
