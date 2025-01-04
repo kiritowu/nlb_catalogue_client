@@ -12,16 +12,16 @@ include = ["CHANGELOG.md", "catalogue_client/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-httpx = ">=0.20.0,<0.28.0"
-attrs = ">=21.3.0"
-python-dateutil = "^2.8.0"
+httpx = ">=0.28.1"
+attrs = ">=24.3.0"
+python-dateutil = "^2.9.0"
 tenacity = "^9.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.0.0"
 pytest-asyncio = "^0.24.0"
-pytest-cov = "^4.0.0"
-pytest-mock = "^3.11.1"
+pytest-cov = "^5.0.0"
+pytest-mock = "^3.14.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
