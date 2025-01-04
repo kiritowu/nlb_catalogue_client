@@ -2,7 +2,7 @@
 
 Python SDK for accessing NLB's Catalogue Search API, generated dynamically from [NLB's Openapi.json](https://openweb.nlb.gov.sg/api/swagger/index.html) using [openapi-python-client](https://github.com/openapi-generators/openapi-python-client).
 
-Tenacity with `wait_exponential` is used for retry behavior on NLP API if `429 Too Many Request` is received.
+Tenacity with `wait_exponential` is used for retry behavior on NLP API if `429 Too Many Requests` is received.
 
 ## Prerequisite
 
