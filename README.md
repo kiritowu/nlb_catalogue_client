@@ -1,9 +1,11 @@
 # nlb-api-client
+
 Python SDK for accessing NLB's Catalogue Search API, generated dynamically from [NLB's Openapi.json](https://openweb.nlb.gov.sg/api/swagger/index.html) using [openapi-python-client](https://github.com/openapi-generators/openapi-python-client).
 
 Tenacity with `wait_exponential` is used for retry behavior on NLP API if `429 Too Many Request` is received.
 
 ## Prerequisite
+
 The package can be installed with the following command:
 
 ```bash
@@ -13,6 +15,7 @@ pip install nlb-catalogue-client
 As API key is required for access of NLB's API, please request one using [Open Web Service Application Form](https://go.gov.sg/nlblabs-form).
 
 ## Usage
+
 First, create a client using `AuthenticatedClient`. Do note that to access [NLB public APIs](https://www.nlb.gov.sg/main/partner-us/contribute-and-create-with-us/NLBLabs), ensure that `NLB_API_ID` and `NLB_API_KEY` are available and exposed as environment variable.
 
 ```python
@@ -63,8 +66,8 @@ async with client as client:
         print("Error in API Response", response.status_code)
 ```
 
-
 Things to know:
+
 1. Every path/method combo becomes a Python module with four functions:
     1. `sync`: Blocking request that returns parsed data (if successful) or `None`
     1. `sync_detailed`: Blocking request that always returns a `Request`, optionally with `parsed` set if the request was successful.
@@ -116,7 +119,13 @@ To run the test suite, ensure you have the package installed locally and execute
 pytest .
 ```
 
+## Formatting Markdown
+
+```bash
+npm install -g markdownlint-cli
+markdownlint --disable MD013 MD033 MD041 --fix .
+```
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
