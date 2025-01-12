@@ -16,7 +16,6 @@ As API key is required for access of NLB's API, please request one using [Open W
 
 ## Usage
 
-
 First, create a client using `AuthenticatedClient`. Do note that to access [NLB public APIs](https://www.nlb.gov.sg/main/partner-us/contribute-and-create-with-us/NLBLabs), ensure that `NLB_APP_ID` and `NLB_API_KEY` are available and exposed as environment variable
 
 ```python
