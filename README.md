@@ -16,7 +16,8 @@ As API key is required for access of NLB's API, please request one using [Open W
 
 ## Usage
 
-First, create a client using `AuthenticatedClient`. Do note that to access [NLB public APIs](https://www.nlb.gov.sg/main/partner-us/contribute-and-create-with-us/NLBLabs), ensure that `NLB_APP_ID` and `NLB_API_KEY` are available and exposed as environment variables.
+
+First, create a client using `AuthenticatedClient`. Do note that to access [NLB public APIs](https://www.nlb.gov.sg/main/partner-us/contribute-and-create-with-us/NLBLabs), ensure that `NLB_APP_ID` and `NLB_API_KEY` are available and exposed as environment variable
 
 ```python
 import os
@@ -116,6 +117,13 @@ client.set_httpx_client(httpx.Client(base_url="https://openweb.nlb.gov.sg/api/v2
 ```bash
 poetry install # Install the package locally.
 poetry run pytest # Run tests.
+```
+
+## Formatting Markdown
+
+```bash
+npm install -g markdownlint-cli
+markdownlint --disable MD013 MD033 MD041 --fix .
 ```
 
 ## License
