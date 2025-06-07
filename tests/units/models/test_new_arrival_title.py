@@ -1,4 +1,3 @@
-
 from nlb_catalogue_client.models.bib_format import BibFormat
 from nlb_catalogue_client.models.new_arrival_title import NewArrivalTitle
 from nlb_catalogue_client.types import UNSET
