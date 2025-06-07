@@ -118,6 +118,19 @@ poetry install # Install the package locally.
 poetry run pytest # Run tests.
 ```
 
+## Integration Tests
+
+Integration tests live in `tests/integrations/` and exercise the live NLB Catalogue API.
+To enable them, copy the provided `.env.example` file to `.env` in the project root and fill in your credentials. The `.env.example` file contains the following environment variables:
+
+```bash
+NLB_APP_ID=<your-app-id>
+NLB_API_KEY=<your-api-key>
+NLB_BRN=<valid-brn-to-test>
+```
+
+The integration tests will be skipped if these variables are not set.
+
 ## Formatting Markdown
 
 ```bash

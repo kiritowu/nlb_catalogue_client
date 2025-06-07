@@ -90,7 +90,7 @@ class TestTitleSummary:
 
     def test_from_dict_full(self, title_summary_full):
         title_summary = TitleSummary.from_dict(title_summary_full[1])
-        
+
         assert title_summary.title == title_summary_full[0].title
         assert title_summary.native_title == title_summary_full[0].native_title
         assert title_summary.series_title == title_summary_full[0].series_title
@@ -105,7 +105,7 @@ class TestTitleSummary:
 
     def test_from_dict_required_only(self, title_summary_required_only):
         title_summary = TitleSummary.from_dict(title_summary_required_only[1])
-        
+
         assert title_summary.title is UNSET
         assert title_summary.native_title is UNSET
         assert title_summary.series_title is UNSET
@@ -117,7 +117,7 @@ class TestTitleSummary:
 
     def test_from_dict_with_none(self, title_summary_with_none):
         title_summary = TitleSummary.from_dict(title_summary_with_none[1])
-        
+
         assert title_summary.title is None
         assert title_summary.native_title is None
         assert title_summary.series_title is None
@@ -137,7 +137,7 @@ class TestTitleSummary:
     def test_from_dict_with_invalid_fields(self, field_name, invalid_value):
         data = {field_name: invalid_value}
         title_summary = TitleSummary.from_dict(data)
-        
+
         field_map = {
             "seriesTitle": "series_title",
             "nativeSeriesTitle": "native_series_title",
