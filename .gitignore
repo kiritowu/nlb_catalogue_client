@@ -3,6 +3,7 @@ build/
 dist/
 *.egg-info/
 .pytest_cache/
+.DS_Store
 
 # pyenv
 .python-version
