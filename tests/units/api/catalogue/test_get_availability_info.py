@@ -13,7 +13,7 @@ from nlb_catalogue_client.models.get_availability_info_response_v2 import GetAva
 
 @pytest.fixture()
 def client() -> AuthenticatedClient:
-    return AuthenticatedClient(base_url="https://api.example.com", token="test_token", raise_on_unexpected_status=True)
+    return AuthenticatedClient(base_url="", token="test_token", raise_on_unexpected_status=True)
 
 
 @pytest.fixture()
